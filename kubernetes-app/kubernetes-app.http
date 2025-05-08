@@ -1,6 +1,8 @@
 @kubernetes_app_HostAddress = http://localhost:5072
 
-GET {{kubernetes_app_HostAddress}}/weatherforecast/
+GET {{kubernetes_app_HostAddress}}/test/
 Accept: application/json
 
 ###
+
+//docker run -d -p 5072:80 -e ASPNETCORE_URLS=http://+:80 --name kubernetes-app-container kubernetes-app

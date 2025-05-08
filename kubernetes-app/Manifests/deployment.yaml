@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-app-deployment
+  labels:
+    app: kubernetes-app
+spec:
+  replicas: 3 # Define el número inicial de réplicas (Pods) que quieres ejecutar
+  selector:
+    matchLabels:
+      app: kubernetes-app
+  template:
+    metadata:
+      labels:
+        app: kubernetes-app
+    spec:
+      containers:
+        - name: kubernetes-app-container
+          image: kubernetes-app # El nombre de tu imagen de Docker
+          imagePullPolicy: Never # Añade esta línea para evitar que Kubernetes intente descargar la imagen de Docker Hub
+          ports:
+            - containerPort: 80 # El puerto en el que escucha tu aplicación dentro del contenedor
+          env: # Define las variables de entorno para el contenedor
+            - name: ASPNETCORE_URLS
+              value: http://+:80

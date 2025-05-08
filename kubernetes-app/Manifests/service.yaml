@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubernetes-app-service
+  labels:
+    app: kubernetes-app
+spec:
+  selector:
+    app: kubernetes-app
+  ports:
+    - protocol: TCP
+      port: 80 # El puerto al que se accederá al Service dentro del clúster
+      targetPort: 80 # El puerto en el que los contenedores están escuchando
+  type: LoadBalancer # Expone el Service externamente usando un balanceador de carga del proveedor (Docker Desktop simula esto)
