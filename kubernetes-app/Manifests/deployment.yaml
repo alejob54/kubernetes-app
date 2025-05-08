@@ -5,7 +5,7 @@ metadata:
   labels:
     app: kubernetes-app
 spec:
-  replicas: 3 # Define el número inicial de réplicas (Pods) que quieres ejecutar
+  replicas: 10 # Define el número inicial de réplicas (Pods) que quieres ejecutar
   selector:
     matchLabels:
       app: kubernetes-app

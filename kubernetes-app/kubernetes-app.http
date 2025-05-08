@@ -1,6 +1,11 @@
-@kubernetes_app_HostAddress = http://localhost:5072
+@kubernetes_app_HostAddress = http://localhost:81
 
 GET {{kubernetes_app_HostAddress}}/test/
+Accept: application/json
+
+###
+
+GET {{kubernetes_app_HostAddress}}/fibonacci/
 Accept: application/json
 
 ###
